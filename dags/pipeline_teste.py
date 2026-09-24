@@ -23,7 +23,7 @@ with DAG(
     dag_id='pipeline_teste',
     default_args=default_args,
     description='Uma pipeline simples de teste',
-    schedule_interval='@daily',
+    schedule="@daily",
     start_date=datetime(2026, 1, 1),
     catchup=False,
     tags=['teste', 'exemplo'],

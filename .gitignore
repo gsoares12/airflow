@@ -5,3 +5,6 @@
 
 logs/
 *.log
+
+config/
+dags/__pycache__/
