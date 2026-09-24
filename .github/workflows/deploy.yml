@@ -1,0 +1,18 @@
+name: Deploy Airflow Local via GitHub Runner
+
+on:
+  push:
+    branches:
+      - main  # Executa o deploy sempre que houver push na branch principal
+
+jobs:
+  deploy:
+    runs-on: self-hosted  # Alvo: o runner que você acabou de ligar no servidor
+
+    steps:
+      - name: Baixar o código atualizado do GitHub
+        uses: actions/checkout@v4
+
+      - name: Sincronizar DAGs com a pasta do Docker Compose
+        run: |
+          rsync -av --delete dags/ /home/debian-server/airflow/dags/
