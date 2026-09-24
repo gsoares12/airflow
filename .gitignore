@@ -1,0 +1,7 @@
+# Ignora arquivos de variáveis de ambiente com senhas e chaves de API
+.env
+.env.local
+*.env.development.local
+
+logs/
+*.log
