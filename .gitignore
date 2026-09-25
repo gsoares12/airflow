@@ -8,3 +8,9 @@ logs/
 
 config/
 dags/__pycache__/
+
+
+# Ocultar a pasta do GitHub Runner local
+actions-runner/
+action-runner/
+_work/
