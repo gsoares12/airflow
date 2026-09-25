@@ -6,6 +6,7 @@ from airflow.operators.empty import EmptyOperator
 # Função de teste que será executada por uma task
 def minha_funcao_teste():
     print("Olá! Esta é uma execução de teste no Airflow.")
+    print("E para fazer o teste de CI/CD, estou adicionando essa linha para teste.")
     return "Sucesso"
 
 # Argumentos padrão para a DAG
