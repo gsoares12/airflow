@@ -85,6 +85,9 @@ x-airflow-common:
     AIRFLOW__SMTP__SMTP_MAIL_FROM: ${SMTP_MAIL_FROM}
     AIRFLOW__SMTP__SMTP_STARTTLS: "True"
     AIRFLOW__SMTP__SMTP_SSL: "False"
+    # Airflow 3: o EmailOperator/SmtpHook lê a connection smtp_default
+    # Porta 587 = STARTTLS, então SSL direto precisa ficar desativado
+    AIRFLOW_CONN_SMTP_DEFAULT: '{"conn_type": "smtp", "host": "${SMTP_HOST}", "port": ${SMTP_PORT}, "login": "${SMTP_USER}", "password": "${SMTP_PASSWORD}", "extra": {"from_email": "${SMTP_MAIL_FROM}", "disable_ssl": true, "disable_tls": false}}'
 
     
   volumes:
