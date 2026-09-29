@@ -1,6 +1,6 @@
 from airflow import DAG
 from airflow.operators.email import EmailOperator
-from datetime import datetime, timedelta
+from datetime import datetime
 
 default_args = {
     'owner': 'guilherme',
@@ -11,7 +11,7 @@ default_args = {
 with DAG(
     'dag_teste_smtp_email',
     default_args=default_args,
-    schedule_interval=None, # Disparo apenas manual na interface web
+    schedule=None,
     catchup=False,
     tags=['teste', 'email'],
 ) as dag:
